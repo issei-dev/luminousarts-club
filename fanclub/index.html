@@ -1,0 +1,995 @@
+<!-- File: fanclub/index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMINOUS FANCLUB ルミナス公式ファンクラブ | Luminous Arts Inc.</title>
+<meta name="description" content="株式会社ルミナス・アーツ公式ファンクラブ「LUMINOUS FANCLUB」。所属タレントとの特別な時間を、あなたに。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700;900&family=Caveat:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fff8f3;
+    --bg-2:#fef0e8;
+    --bg-3:#ffe8d8;
+    --ink:#3a2a30;
+    --ink-soft:#6a5560;
+    --coral:#ff8aa3;
+    --coral-deep:#ff6b8a;
+    --lavender:#c5a3e8;
+    --mint:#a8e4d0;
+    --yellow:#ffd86b;
+    --cream:#fff4ea;
+    --shadow:0 8px 24px rgba(255,138,163,.15);
+    --shadow-hover:0 12px 32px rgba(255,138,163,.25);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-weight:400;line-height:1.9;letter-spacing:.02em;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  button{font-family:inherit;cursor:pointer;border:none;color:inherit}
+
+  /* ---------- Background decoration ---------- */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(circle at 10% 20%,rgba(255,138,163,.12),transparent 35%),
+      radial-gradient(circle at 90% 80%,rgba(197,163,232,.12),transparent 35%),
+      radial-gradient(circle at 50% 50%,rgba(255,216,107,.06),transparent 50%);
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:18px 40px;
+    display:flex;justify-content:space-between;align-items:center;
+    background:rgba(255,248,243,.92);backdrop-filter:blur(10px);
+    border-bottom:2px solid rgba(255,138,163,.15);
+  }
+  .logo{
+    display:flex;align-items:center;gap:10px;
+  }
+  .logo-mark{
+    width:36px;height:36px;border-radius:50%;
+    background:linear-gradient(135deg,var(--coral),var(--lavender));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Caveat',cursive;
+    font-size:22px;color:#fff;font-weight:700;
+    box-shadow:0 4px 12px rgba(255,138,163,.3);
+  }
+  .logo-text{
+    font-family:'Quicksand',sans-serif;
+    font-weight:700;font-size:16px;letter-spacing:.15em;color:var(--ink);
+    line-height:1.2;
+  }
+  .logo-text small{
+    display:block;font-size:9px;color:var(--coral);
+    letter-spacing:.3em;margin-top:2px;
+  }
+  nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+  nav a{
+    font-family:'Quicksand',sans-serif;
+    font-size:13px;letter-spacing:.15em;font-weight:600;
+    color:var(--ink-soft);transition:color .3s;
+  }
+  nav a:hover{color:var(--coral)}
+  .nav-login{
+    padding:10px 22px;border-radius:24px;
+    background:#fff;border:2px solid var(--coral);
+    color:var(--coral)!important;font-weight:700;
+    transition:all .3s;
+  }
+  .nav-login:hover{background:var(--coral);color:#fff!important}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    min-height:100vh;
+    padding:140px 40px 80px;
+    display:flex;align-items:center;justify-content:center;
+    position:relative;overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;top:10%;left:5%;
+    width:240px;height:240px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,138,163,.2),transparent 70%);
+    animation:float 8s ease-in-out infinite;
+  }
+  .hero::after{
+    content:"";position:absolute;bottom:15%;right:8%;
+    width:300px;height:300px;border-radius:50%;
+    background:radial-gradient(circle,rgba(197,163,232,.2),transparent 70%);
+    animation:float 10s ease-in-out infinite reverse;
+  }
+  @keyframes float{
+    0%,100%{transform:translateY(0) scale(1)}
+    50%{transform:translateY(-30px) scale(1.05)}
+  }
+  .hero-content{
+    text-align:center;max-width:900px;position:relative;z-index:2;
+  }
+  .hero-badge{
+    display:inline-block;
+    padding:8px 24px;border-radius:24px;
+    background:rgba(255,255,255,.8);backdrop-filter:blur(8px);
+    border:2px solid var(--coral);
+    font-family:'Quicksand',sans-serif;
+    font-size:12px;letter-spacing:.3em;color:var(--coral);
+    font-weight:700;margin-bottom:32px;
+  }
+  .hero h1{
+    font-family:'Quicksand',sans-serif;
+    font-size:clamp(48px,8vw,108px);
+    font-weight:700;line-height:1.05;letter-spacing:.02em;
+    color:var(--ink);margin-bottom:16px;
+    background:linear-gradient(135deg,var(--coral) 0%,var(--lavender) 100%);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .hero h1 .smile{
+    display:inline-block;font-size:.6em;color:var(--yellow);
+    -webkit-text-fill-color:var(--yellow);
+    animation:wiggle 2s ease-in-out infinite;
+  }
+  @keyframes wiggle{
+    0%,100%{transform:rotate(0)}
+    25%{transform:rotate(-10deg)}
+    75%{transform:rotate(10deg)}
+  }
+  .hero-sub{
+    font-family:'Caveat',cursive;
+    font-size:clamp(28px,4vw,44px);
+    color:var(--coral);font-weight:500;margin-bottom:24px;
+  }
+  .hero-jp{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:clamp(16px,1.8vw,20px);font-weight:500;
+    color:var(--ink);letter-spacing:.2em;
+  }
+  .hero-desc{
+    max-width:620px;margin:48px auto 0;
+    font-size:15px;line-height:2.2;color:var(--ink-soft);
+  }
+  .hero-cta{
+    margin-top:48px;
+    display:flex;justify-content:center;gap:16px;flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:16px 40px;border-radius:32px;
+    font-family:'Quicksand',sans-serif;
+    font-weight:700;font-size:14px;letter-spacing:.15em;
+    transition:all .3s;cursor:pointer;border:none;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg,var(--coral),var(--coral-deep));
+    color:#fff;box-shadow:var(--shadow);
+  }
+  .btn-primary:hover{
+    transform:translateY(-3px);box-shadow:var(--shadow-hover);
+  }
+  .btn-outline{
+    background:#fff;border:2px solid var(--coral);color:var(--coral);
+  }
+  .btn-outline:hover{
+    background:var(--coral);color:#fff;transform:translateY(-2px);
+  }
+  .btn-large{padding:20px 56px;font-size:15px}
+
+  /* ---------- Section common ---------- */
+  section{padding:120px 40px;position:relative}
+  .section-head{text-align:center;margin-bottom:64px}
+  .section-head .badge{
+    display:inline-block;
+    padding:6px 18px;border-radius:20px;
+    background:rgba(255,138,163,.12);
+    font-family:'Quicksand',sans-serif;
+    font-size:11px;letter-spacing:.3em;color:var(--coral-deep);
+    font-weight:700;margin-bottom:16px;
+  }
+  .section-head h2{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:clamp(28px,4vw,42px);font-weight:900;
+    color:var(--ink);letter-spacing:.05em;margin-bottom:16px;
+  }
+  .section-head h2 .accent{color:var(--coral)}
+  .section-head p{font-size:14px;color:var(--ink-soft);letter-spacing:.1em}
+
+  /* ---------- Benefits / Concept ---------- */
+  .benefits{background:#fff}
+  .benefit-grid{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:32px;
+  }
+  .benefit-card{
+    background:var(--cream);
+    border-radius:32px;
+    padding:48px 32px;text-align:center;
+    transition:transform .3s,box-shadow .3s;
+    position:relative;overflow:hidden;
+  }
+  .benefit-card:hover{
+    transform:translateY(-8px);box-shadow:var(--shadow-hover);
+  }
+  .benefit-icon{
+    width:80px;height:80px;border-radius:50%;
+    margin:0 auto 24px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:36px;
+    background:linear-gradient(135deg,var(--coral),var(--lavender));
+    color:#fff;box-shadow:0 8px 20px rgba(255,138,163,.3);
+  }
+  .benefit-card:nth-child(2) .benefit-icon{
+    background:linear-gradient(135deg,var(--lavender),var(--mint));
+  }
+  .benefit-card:nth-child(3) .benefit-icon{
+    background:linear-gradient(135deg,var(--yellow),var(--coral));
+  }
+  .benefit-card h3{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:20px;font-weight:700;color:var(--ink);
+    margin-bottom:16px;letter-spacing:.1em;
+  }
+  .benefit-card p{
+    font-size:13px;color:var(--ink-soft);line-height:2;
+  }
+
+  /* ---------- Plans ---------- */
+  .plans{
+    background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%);
+  }
+  .plan-grid{
+    max-width:1280px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:32px;
+  }
+  .plan-card{
+    background:#fff;border-radius:32px;
+    padding:48px 36px;
+    box-shadow:var(--shadow);
+    transition:all .3s;position:relative;
+    display:flex;flex-direction:column;
+  }
+  .plan-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-hover)}
+  .plan-card.recommended{
+    background:linear-gradient(180deg,#fff 0%,#fff4ea 100%);
+    border:3px solid var(--coral);
+    transform:scale(1.04);
+  }
+  .plan-card.recommended:hover{transform:scale(1.04) translateY(-8px)}
+  .plan-card.vip{
+    background:linear-gradient(180deg,#fff 0%,#f3eafb 100%);
+    border:3px solid var(--lavender);
+  }
+  .plan-ribbon{
+    position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+    padding:6px 20px;border-radius:16px;
+    background:linear-gradient(135deg,var(--coral),var(--coral-deep));
+    color:#fff;font-family:'Quicksand',sans-serif;
+    font-size:11px;font-weight:700;letter-spacing:.2em;
+    box-shadow:0 4px 12px rgba(255,107,138,.3);
+  }
+  .plan-card.vip .plan-ribbon{
+    background:linear-gradient(135deg,var(--lavender),#8a6dc8);
+  }
+  .plan-tag{
+    font-family:'Quicksand',sans-serif;
+    font-size:11px;letter-spacing:.3em;
+    color:var(--coral-deep);font-weight:700;
+    text-align:center;margin-bottom:12px;
+  }
+  .plan-card.vip .plan-tag{color:#8a6dc8}
+  .plan-name{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:24px;font-weight:900;color:var(--ink);
+    text-align:center;margin-bottom:8px;letter-spacing:.05em;
+  }
+  .plan-name-en{
+    font-family:'Caveat',cursive;
+    font-size:18px;color:var(--ink-soft);text-align:center;margin-bottom:24px;
+  }
+  .plan-price{
+    text-align:center;padding:24px 0;
+    border-top:1px dashed rgba(255,138,163,.3);
+    border-bottom:1px dashed rgba(255,138,163,.3);
+    margin-bottom:32px;
+  }
+  .plan-price .num{
+    font-family:'Quicksand',sans-serif;
+    font-size:42px;font-weight:700;color:var(--coral-deep);
+    letter-spacing:.02em;line-height:1;
+  }
+  .plan-card.vip .plan-price .num{color:#8a6dc8}
+  .plan-price .yen{font-size:24px;margin-right:2px}
+  .plan-price .unit{
+    font-size:12px;color:var(--ink-soft);margin-left:6px;
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:500;
+  }
+  .plan-price .sub{
+    margin-top:6px;font-size:11px;color:var(--ink-soft);
+    letter-spacing:.1em;
+  }
+  .plan-features{list-style:none;flex:1;margin-bottom:32px}
+  .plan-features li{
+    padding:10px 0 10px 28px;font-size:13px;color:var(--ink);
+    line-height:1.8;position:relative;
+  }
+  .plan-features li::before{
+    content:"♡";position:absolute;left:0;top:10px;
+    color:var(--coral);font-size:14px;
+  }
+  .plan-card.vip .plan-features li::before{
+    content:"✦";color:var(--lavender);
+  }
+  .plan-cta{text-align:center}
+  .btn-plan{
+    width:100%;padding:16px;border-radius:28px;
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:13px;letter-spacing:.2em;
+    background:#fff;border:2px solid var(--coral);color:var(--coral);
+    transition:all .3s;
+  }
+  .btn-plan:hover{background:var(--coral);color:#fff;transform:translateY(-2px)}
+  .plan-card.recommended .btn-plan{
+    background:linear-gradient(135deg,var(--coral),var(--coral-deep));
+    color:#fff;border:none;
+  }
+  .plan-card.recommended .btn-plan:hover{
+    box-shadow:var(--shadow-hover);
+  }
+  .plan-card.vip .btn-plan{
+    background:linear-gradient(135deg,var(--lavender),#8a6dc8);
+    color:#fff;border:none;
+  }
+
+  /* ---------- Premium Talents ---------- */
+  .talents-pick{background:#fff}
+  .pick-grid{
+    max-width:1280px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:32px;
+  }
+  .pick-card{
+    border-radius:32px;overflow:hidden;
+    background:#fff;
+    box-shadow:var(--shadow);
+    transition:all .3s;
+    display:block;
+  }
+  .pick-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
+  .pick-img{
+    aspect-ratio:4/3;
+    position:relative;display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .pick-img-1{background:linear-gradient(135deg,#ffb3c6,#ff8aa3)}
+  .pick-img-2{background:linear-gradient(135deg,#c5a3e8,#9a7ad1)}
+  .pick-img-3{background:linear-gradient(135deg,#a8e4d0,#7fc4ad)}
+  .pick-img-4{background:linear-gradient(135deg,#ffd86b,#ffa55c)}
+  .pick-img-5{background:linear-gradient(135deg,#a0d8ef,#71b8e0)}
+  .pick-img-6{background:linear-gradient(135deg,#ffa3c1,#c5a3e8)}
+  .pick-img .ph{
+    font-family:'Quicksand',sans-serif;
+    font-size:72px;font-weight:700;color:rgba(255,255,255,.85);
+    letter-spacing:-.02em;
+  }
+  .pick-img .ph-jp{
+    position:absolute;bottom:16px;right:20px;
+    font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+    font-size:14px;color:rgba(255,255,255,.95);
+    background:rgba(255,255,255,.2);backdrop-filter:blur(4px);
+    padding:6px 12px;border-radius:14px;letter-spacing:.1em;
+  }
+  .pick-body{padding:28px}
+  .pick-tag{
+    display:inline-block;padding:4px 12px;border-radius:12px;
+    background:rgba(255,138,163,.15);color:var(--coral-deep);
+    font-family:'Quicksand',sans-serif;
+    font-size:10px;font-weight:700;letter-spacing:.2em;
+    margin-bottom:14px;
+  }
+  .pick-body h3{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:20px;font-weight:900;color:var(--ink);
+    margin-bottom:8px;letter-spacing:.08em;
+  }
+  .pick-body .sub{
+    font-family:'Caveat',cursive;
+    font-size:16px;color:var(--coral);margin-bottom:14px;
+  }
+  .pick-body p{
+    font-size:13px;color:var(--ink-soft);line-height:1.9;margin-bottom:20px;
+  }
+  .pick-link{
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:13px;letter-spacing:.2em;color:var(--coral-deep);
+  }
+  .pick-link::after{
+    content:"→";transition:transform .3s;
+  }
+  .pick-card:hover .pick-link::after{transform:translateX(4px)}
+
+  /* ---------- How it works ---------- */
+  .howto{background:var(--bg-2)}
+  .howto-grid{
+    max-width:1100px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  }
+  .howto-step{
+    background:#fff;border-radius:24px;
+    padding:36px 28px;text-align:center;
+    box-shadow:var(--shadow);transition:all .3s;
+    position:relative;
+  }
+  .howto-step:hover{transform:translateY(-6px)}
+  .howto-num{
+    width:48px;height:48px;border-radius:50%;
+    background:linear-gradient(135deg,var(--coral),var(--lavender));
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    font-family:'Quicksand',sans-serif;font-weight:700;font-size:18px;
+    margin:0 auto 20px;
+    box-shadow:0 4px 12px rgba(255,138,163,.3);
+  }
+  .howto-step h4{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:16px;font-weight:700;color:var(--ink);
+    margin-bottom:12px;letter-spacing:.08em;
+  }
+  .howto-step p{font-size:12px;color:var(--ink-soft);line-height:1.9}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:#fff}
+  .faq-list{max-width:800px;margin:0 auto}
+  .faq-item{
+    background:var(--cream);border-radius:20px;
+    margin-bottom:14px;overflow:hidden;
+    transition:all .3s;
+  }
+  .faq-item:hover{box-shadow:var(--shadow)}
+  .faq-q{
+    width:100%;padding:22px 28px;
+    background:transparent;border:none;text-align:left;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:14px;font-weight:700;color:var(--ink);
+    letter-spacing:.05em;line-height:1.7;
+  }
+  .faq-q::before{
+    content:"Q";
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    color:var(--coral);font-size:18px;margin-right:14px;flex-shrink:0;
+  }
+  .faq-q-text{flex:1}
+  .faq-toggle{
+    width:28px;height:28px;border-radius:50%;
+    background:var(--coral);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:18px;font-weight:700;
+    transition:transform .3s;flex-shrink:0;
+  }
+  .faq-item.open .faq-toggle{transform:rotate(45deg)}
+  .faq-a{
+    max-height:0;overflow:hidden;transition:max-height .4s,padding .4s;
+  }
+  .faq-item.open .faq-a{max-height:300px;padding:0 28px 24px 70px}
+  .faq-a p{font-size:13px;color:var(--ink-soft);line-height:2}
+
+  /* ---------- Final CTA ---------- */
+  .final-cta{
+    background:linear-gradient(135deg,#ffb3c6 0%,#c5a3e8 100%);
+    text-align:center;padding:120px 40px;
+    color:#fff;position:relative;overflow:hidden;
+  }
+  .final-cta::before,.final-cta::after{
+    content:"";position:absolute;border-radius:50%;
+    background:rgba(255,255,255,.15);
+  }
+  .final-cta::before{width:200px;height:200px;top:-50px;left:-50px}
+  .final-cta::after{width:300px;height:300px;bottom:-80px;right:-80px}
+  .final-cta-content{position:relative;z-index:1;max-width:680px;margin:0 auto}
+  .final-cta .heart{
+    font-size:48px;margin-bottom:20px;display:inline-block;
+    animation:beat 1.5s ease-in-out infinite;
+  }
+  @keyframes beat{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.15)}
+  }
+  .final-cta h3{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:clamp(24px,4vw,38px);font-weight:900;
+    margin-bottom:24px;letter-spacing:.1em;
+  }
+  .final-cta p{
+    font-size:15px;line-height:2.2;margin-bottom:40px;opacity:.95;
+  }
+  .btn-white{
+    background:#fff;color:var(--coral-deep);
+    padding:18px 56px;border-radius:32px;
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:14px;letter-spacing:.2em;
+    box-shadow:0 8px 24px rgba(0,0,0,.15);
+    transition:all .3s;display:inline-block;
+  }
+  .btn-white:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.2)}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:#fff;padding:60px 40px 32px;
+    border-top:2px solid rgba(255,138,163,.15);text-align:center;
+  }
+  footer .logo{justify-content:center;margin-bottom:24px}
+  footer .footer-back{
+    display:inline-block;padding:8px 20px;border-radius:18px;
+    background:rgba(255,138,163,.1);
+    font-family:'Quicksand',sans-serif;font-size:12px;
+    font-weight:700;letter-spacing:.15em;color:var(--coral-deep);
+    margin-top:16px;transition:all .3s;
+  }
+  footer .footer-back:hover{background:var(--coral);color:#fff}
+  footer .copyright{
+    margin-top:32px;padding-top:24px;
+    border-top:1px dashed rgba(255,138,163,.2);
+    font-family:'Quicksand',sans-serif;
+    font-size:11px;letter-spacing:.2em;color:var(--ink-soft);
+  }
+
+  /* ---------- Modal ---------- */
+  .modal{
+    display:none;position:fixed;inset:0;z-index:200;
+    background:rgba(58,42,48,.6);backdrop-filter:blur(8px);
+    align-items:center;justify-content:center;padding:24px;
+  }
+  .modal.show{display:flex;animation:fadeIn .3s}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .modal-box{
+    max-width:480px;width:100%;
+    background:#fff;border-radius:32px;
+    padding:56px 40px;text-align:center;
+    position:relative;animation:popIn .4s;
+  }
+  @keyframes popIn{
+    from{transform:scale(.85);opacity:0}
+    to{transform:scale(1);opacity:1}
+  }
+  .modal-icon{
+    width:80px;height:80px;border-radius:50%;
+    margin:0 auto 20px;
+    background:linear-gradient(135deg,var(--yellow),var(--coral));
+    display:flex;align-items:center;justify-content:center;
+    font-size:40px;color:#fff;
+  }
+  .modal-box h4{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:22px;font-weight:900;color:var(--ink);
+    margin-bottom:14px;letter-spacing:.08em;
+  }
+  .modal-box .en{
+    font-family:'Quicksand',sans-serif;font-weight:700;
+    font-size:11px;letter-spacing:.4em;color:var(--coral);margin-bottom:10px;
+  }
+  .modal-box p{
+    font-size:13px;color:var(--ink-soft);line-height:2;margin-bottom:28px;
+  }
+  .modal-close{
+    padding:12px 36px;border-radius:24px;
+    background:linear-gradient(135deg,var(--coral),var(--coral-deep));
+    color:#fff;font-family:'Quicksand',sans-serif;
+    font-weight:700;font-size:13px;letter-spacing:.2em;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1000px){
+    .benefit-grid,.plan-grid,.pick-grid{grid-template-columns:1fr;max-width:520px}
+    .plan-card.recommended{transform:scale(1)}
+    .plan-card.recommended:hover{transform:translateY(-8px)}
+    .howto-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:760px){
+    header{padding:14px 20px}
+    nav ul{gap:14px}
+    nav li:not(:last-child){display:none}
+    .hero{padding:120px 20px 60px}
+    section{padding:80px 20px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-mark">L</div>
+    <div class="logo-text">
+      LUMINOUS FANCLUB
+      <small>OFFICIAL</small>
+    </div>
+  </a>
+  <nav>
+    <ul>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#plans">PLANS</a></li>
+      <li><a href="#talents">TALENTS</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="login.html" class="nav-login">LOGIN</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">✦ OFFICIAL FANCLUB SINCE 2026 ✦</div>
+    <h1>
+      Welcome to<br>
+      Our Family <span class="smile">♡</span>
+    </h1>
+    <div class="hero-sub">— もっと近くで、もっと特別に。 —</div>
+    <div class="hero-jp">ル ミ ナ ス 公 式 フ ァ ン ク ラ ブ</div>
+    <p class="hero-desc">
+      LUMINOUS FANCLUBは、ルミナス・アーツ所属タレントとファンのみなさんが、<br>
+      もっと近く、もっと特別な時間を過ごせる場所。<br>
+      限定配信、ファンミーティング、デジタルフォト、1on1まで。<br>
+      推しとの距離が、ぐっと近づく毎日が待っています。
+    </p>
+    <div class="hero-cta">
+      <a href="#plans" class="btn btn-primary btn-large">プランを見る</a>
+      <a href="#talents" class="btn btn-outline btn-large">推しを探す</a>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits" id="about">
+  <div class="section-head">
+    <div class="badge">CONCEPT</div>
+    <h2>ファンクラブで、できる<span class="accent">こと</span></h2>
+    <p>あなたと推しの距離を、もっと縮める3つの体験</p>
+  </div>
+  <div class="benefit-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">♡</div>
+      <h3>限定生配信</h3>
+      <p>会員だけが見られる、月1〜2回の特別生配信。素顔のタレントとリアルタイムでつながれます。</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">✿</div>
+      <h3>ファンミーティング</h3>
+      <p>少人数だからこそ叶う、近距離コミュニケーション。月1回の抽選制ファンミに参加可能。</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">★</div>
+      <h3>EC・チケット優先</h3>
+      <p>グッズの先行販売、ライブ・イベントチケットの会員優先枠。"推し活"を最大限サポート。</p>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="plans" id="plans">
+  <div class="section-head">
+    <div class="badge">MEMBERSHIP</div>
+    <h2>3つの<span class="accent">プラン</span></h2>
+    <p>あなたの推し活スタイルに合わせて選べる、3段階のメンバーシップ</p>
+  </div>
+  <div class="plan-grid">
+
+    <!-- Plan 1: Standard -->
+    <div class="plan-card">
+      <div class="plan-tag">PLAN 01</div>
+      <div class="plan-name">スタンダードプラン</div>
+      <div class="plan-name-en">All Talents</div>
+      <div class="plan-price">
+        <div class="num"><span class="yen">¥</span>880<span class="unit">/ 月</span></div>
+        <div class="sub">年額 ¥8,800（2ヶ月分お得）</div>
+      </div>
+      <ul class="plan-features">
+        <li>所属37名全員の限定生配信を視聴可能（月1〜2回）</li>
+        <li>会員限定ニュース・お知らせの先行配信</li>
+        <li>公式ECサイトでのグッズ先行購入</li>
+        <li>ライブ・イベントチケットの優先抽選枠</li>
+        <li>会員限定の月刊ニュースレター</li>
+      </ul>
+      <div class="plan-cta">
+        <button class="btn-plan" onclick="openModal()">新規入会する</button>
+      </div>
+    </div>
+
+    <!-- Plan 2: Premium (recommended) -->
+    <div class="plan-card recommended">
+      <div class="plan-ribbon">★ MOST POPULAR ★</div>
+      <div class="plan-tag">PLAN 02</div>
+      <div class="plan-name">プレミアムプラン</div>
+      <div class="plan-name-en">Pick Your Star</div>
+      <div class="plan-price">
+        <div class="num"><span class="yen">¥</span>3,300<span class="unit">/ 月</span></div>
+        <div class="sub">推しタレント・グループ単位で加入</div>
+      </div>
+      <ul class="plan-features">
+        <li>推しの週1回限定個人生配信を視聴</li>
+        <li>月1回の少人数デジタルファンミ（抽選制）</li>
+        <li>毎月のデジタルフォト（マイページ閲覧/DL可）</li>
+        <li>推し変・複数推しに対応するマルチ会員管理</li>
+        <li>スタンダードプランの全特典を含む</li>
+      </ul>
+      <div class="plan-cta">
+        <button class="btn-plan" onclick="openModal()">プレミアムに入会</button>
+      </div>
+    </div>
+
+    <!-- Plan 3: VIP -->
+    <div class="plan-card vip">
+      <div class="plan-ribbon">✦ VIP LIMITED ✦</div>
+      <div class="plan-tag">PLAN 03</div>
+      <div class="plan-name">ロイヤル・パトロン</div>
+      <div class="plan-name-en">Royal Patron VIP</div>
+      <div class="plan-price">
+        <div class="num"><span class="yen">¥</span>240,000<span class="unit">/ 年</span></div>
+        <div class="sub">1タレントあたり30枠限定 / 年一括</div>
+      </div>
+      <ul class="plan-features">
+        <li>年4回の1on1トーク（各5分・予約制）</li>
+        <li>年1回の名前入りお祝い動画</li>
+        <li>ライブ最前列〜3列目座席確約</li>
+        <li>専用VIPサポートデスク</li>
+        <li>プレミアム・スタンダードの全特典を含む</li>
+      </ul>
+      <div class="plan-cta">
+        <button class="btn-plan" onclick="openModal()">VIPに入会する</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PREMIUM TALENTS -->
+<section class="talents-pick" id="talents">
+  <div class="section-head">
+    <div class="badge">PICK YOUR STAR</div>
+    <h2>推しを<span class="accent">えらぶ</span></h2>
+    <p>プレミアムプランで応援できる、6つのグループ・タレント</p>
+  </div>
+  <div class="pick-grid">
+    <a href="lumina5.html" class="pick-card">
+      <div class="pick-img pick-img-1">
+        <div class="ph">L✦5</div>
+        <div class="ph-jp">LUMINA✦5</div>
+      </div>
+      <div class="pick-body">
+        <div class="pick-tag">IDOL · 5名</div>
+        <h3>LUMINA✦5</h3>
+        <div class="sub">— 5 sparkles, one stage —</div>
+        <p>ルミナス・アーツのアイドル部門精鋭5名。きらめきと笑顔で、毎日にときめきを。</p>
+        <span class="pick-link">推しページを見る</span>
+      </div>
+    </a>
+
+    <a href="group-a.html" class="pick-card">
+      <div class="pick-img pick-img-2">
+        <div class="ph">A</div>
+        <div class="ph-jp">Lumière Duo</div>
+      </div>
+      <div class="pick-body">
+        <div class="pick-tag">IDOL UNIT · 2名</div>
+        <h3>Lumière Duo</h3>
+        <div class="sub">— soft & moody —</div>
+        <p>外部から転籍した2人組ユニット。落ち着いた歌声と幻想的な世界観が魅力。</p>
+        <span class="pick-link">推しページを見る</span>
+      </div>
+    </a>
+
+    <a href="group-b.html" class="pick-card">
+      <div class="pick-img pick-img-3">
+        <div class="ph">B</div>
+        <div class="ph-jp">Pop★Plum</div>
+      </div>
+      <div class="pick-body">
+        <div class="pick-tag">IDOL UNIT · 2名</div>
+        <h3>Pop★Plum</h3>
+        <div class="sub">— bright & bouncy —</div>
+        <p>もう一つの転籍ユニット。元気いっぱいのポップな楽曲とダンスでHAPPYをお届け。</p>
+        <span class="pick-link">推しページを見る</span>
+      </div>
+    </a>
+
+    <a href="voice-actress.html" class="pick-card">
+      <div class="pick-img pick-img-4">
+        <div class="ph">K</div>
+        <div class="ph-jp">七瀬 ことね</div>
+      </div>
+      <div class="pick-body">
+        <div class="pick-tag">VOICE ACTRESS</div>
+        <h3>七瀬 ことね</h3>
+        <div class="sub">— let me read for you —</div>
+        <p>深夜アニメで活躍する人気声優。会員限定のASMR配信や朗読配信が大人気。</p>
+        <span class="pick-link">推しページを見る</span>
+      </div>
+    </a>
+
+    <a href="actress.html" class="pick-card">
+      <div class="pick-img pick-img-5">
+        <div class="ph">R</div>
+        <div class="ph-jp">月城 凛</div>
+      </div>
+      <div class="pick-body">
+        <div class="pick-tag">ACTRESS</div>
+        <h3>月城 凛</h3>
+        <div class="sub">— elegance & whisper —</div>
+        <p>NHK大河ドラマ主演の実力派女優。撮影現場の裏側を独占公開する贅沢な時間。</p>
+        <span class="pick-link">推しページを見る</span>
+      </div>
+    </a>
+
+    <a href="announce.html" class="pick-card">
+      <div class="pick-img pick-img-6">
+        <div class="ph">A3</div>
+        <div class="ph-jp">LMA Announce</div>
+      </div>
+      <div class="pick-body">
+        <div class="pick-tag">ANNOUNCERS · 3名</div>
+        <h3>アナウンサーチーム</h3>
+        <div class="sub">— from morning to your heart —</div>
+        <p>2026年4月新設！知性と表現力を兼ね備えた次世代マルチキャスター3名。</p>
+        <span class="pick-link">推しページを見る</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="howto">
+  <div class="section-head">
+    <div class="badge">HOW IT WORKS</div>
+    <h2>入会から推し活まで、<span class="accent">4ステップ</span></h2>
+    <p>シンプルだから、すぐに始められる</p>
+  </div>
+  <div class="howto-grid">
+    <div class="howto-step">
+      <div class="howto-num">01</div>
+      <h4>プランを選ぶ</h4>
+      <p>3つのプランから、あなたにぴったりのものを。</p>
+    </div>
+    <div class="howto-step">
+      <div class="howto-num">02</div>
+      <h4>会員登録</h4>
+      <p>メールアドレスと支払い情報を登録するだけ。</p>
+    </div>
+    <div class="howto-step">
+      <div class="howto-num">03</div>
+      <h4>推しを選ぶ</h4>
+      <p>プレミアム以上は、応援したい推しを選択。</p>
+    </div>
+    <div class="howto-step">
+      <div class="howto-num">04</div>
+      <h4>推し活スタート</h4>
+      <p>配信・ファンミ・グッズ、すべてを楽しもう！</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-head">
+    <div class="badge">FAQ</div>
+    <h2>よくある<span class="accent">ご質問</span></h2>
+    <p>ご入会前に、気になることをチェック</p>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">途中でプランを変更できますか？</span>
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-a">
+        <p>はい、いつでもプランの変更が可能です。マイページから簡単に手続きいただけます。アップグレードはすぐに反映、ダウングレードは次回更新月から適用されます。</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">推しを複数選ぶことはできますか？</span>
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-a">
+        <p>プレミアムプランは1グループ・1タレントごとに月額3,300円となります。複数の推しを応援したい場合は、その分のプランを追加でご契約いただけます。</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">退会はいつでもできますか？</span>
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-a">
+        <p>はい、マイページからいつでも退会手続きが可能です。次回更新日の前日までに手続きいただければ、追加の課金は発生しません。</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">VIPプランの1on1はどう予約しますか？</span>
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-a">
+        <p>VIP会員専用の予約システムから、希望日時のスロット（5分単位）を選んで予約いただけます。年4回の1on1機会を、お好きなタイミングでご活用いただけます。</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        <span class="faq-q-text">支払い方法は何が使えますか？</span>
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-a">
+        <p>クレジットカード（Visa / Mastercard / JCB / Amex）、各種QR決済、コンビニ決済に対応しています。VIPプランは年一括でのお支払いを推奨しております。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-content">
+    <div class="heart">♡</div>
+    <h3>さあ、推し活、はじめよう。</h3>
+    <p>
+      ルミナスの灯りを、もっと近くで感じる毎日へ。<br>
+      あなたの「好き」が、彼女たちの「力」になります。
+    </p>
+    <a href="#plans" class="btn-white">プランを選ぶ →</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="logo">
+    <div class="logo-mark">L</div>
+    <div class="logo-text">
+      LUMINOUS FANCLUB
+      <small>OFFICIAL</small>
+    </div>
+  </div>
+  <div>
+    <a href="../index.html" class="footer-back">← Back to Luminous Arts Inc.</a>
+  </div>
+  <div class="copyright">© 2026 LUMINOUS ARTS INC. — FANCLUB DIVISION</div>
+</footer>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-icon">⚙</div>
+    <div class="en">UNDER MAINTENANCE</div>
+    <h4>入 会 規 制 中</h4>
+    <p>
+      ただいま新規入会は規制中です。<br>
+      会員数の急増により、サービス品質維持のため<br>
+      一時的に受付を停止しております。<br>
+      再開までもう少々お待ちください！
+    </p>
+    <button class="modal-close" onclick="closeModal()">閉じる</button>
+  </div>
+</div>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+  });
+  // Modal
+  function openModal(){
+    document.getElementById('modal').classList.add('show');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(){
+    document.getElementById('modal').classList.remove('show');
+    document.body.style.overflow='';
+  }
+  document.getElementById('modal').addEventListener('click',(e)=>{
+    if(e.target.id==='modal') closeModal();
+  });
+</script>
+
+</body>
+</html>
